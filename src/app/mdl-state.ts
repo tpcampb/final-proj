@@ -7,4 +7,7 @@ export class MdlState {
   fgColor: string;
   fgText: string[];
   commands: MdlCommand[];
+
+  imdbTitle: string;
+  imdbId: string;
 }

@@ -1,0 +1,59 @@
+@import "./src/variables";
+
+@mixin game-pane {
+  position: absolute;
+  width: $game-width;
+  height: $game-height;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.background-pane {
+  @include game-pane;
+}
+
+.foreground-pane {
+  @include game-pane;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.foreground-p {
+  margin-bottom: .4em;
+  text-indent: 10px;
+}
+
+.command-pane {
+  @include game-pane;
+  color: #e7e713;
+}
+
+.command-list-container {
+  position: relative;
+  width: $game-width;
+  height: $game-height;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.command-list {
+  position: absolute;
+  bottom: 0;
+  margin-left: 10px;
+}
+
+.command-entry-pane {
+  position: absolute;
+  width: $game-width;
+  top: calc(#{$game-height} + 5px);
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+}
+
+.command-entry {
+  width: 100%;
+  border: 0;
+}
+
+
+
+

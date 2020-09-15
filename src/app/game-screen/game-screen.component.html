@@ -1,1 +1,21 @@
-<p>game-screen works!</p>
+<div>
+  <div class="background-pane" [style.background-color]="curState.bgColor">
+  </div>
+
+  <div class="foreground-pane" *ngIf="curState.fgText" [style.color]="curState.fgColor">
+    <p class="foreground-p" *ngFor="let text of curState.fgText">{{text}}</p>
+  </div>
+
+  <div class="command-pane" *ngIf="curState.commands">
+    <div class="command-list-container">
+      <div class="command-list">
+        <p *ngFor="let command of curState.commands">{{command.key}} - {{command.text}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="command-entry-pane">
+    <label for="commandEntry"></label>
+    <input #commandElement id="commandEntry" type="text" class="command-entry" [(ngModel)]="curCommand" (keydown.enter)="processCommand()">
+  </div>
+</div>

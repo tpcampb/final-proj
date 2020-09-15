@@ -1,3 +1,234 @@
 [
+  {
+    "id": "S-00",
+    "role": "text",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "Introduction"
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-10",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ]
+  },
 
+  {
+    "id": "S-10",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "The planet Lacaille is recovering from an 80-year war with a neighboring system.  They are desperate for energy and decide to tap the molten core of it’s second moon Erappa. The energy will be used to heat 300,000 homes for the upcoming winter.  Without it, many will suffer.",
+      "Erappa is habitable, but very sparsely populated. The core tapping process will release poisonous gasses into the atmosphere making the moon unlivable for 10 years. The government of Lacaille has requested help from the League of Worlds to make a final inspection of Erappa to ensure everyone has been evacuated.",
+      "You are given command of the mission.  During your inspection, you find an elderly man named Bok still on the moon. Bok fought in the war and escaped an enemy prison to settle on Erappa as its first inhabitant.  He understands what is happening, but refuses to evacuate saying that if he is forced to leave his home, he will die."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-11",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: Deep Space Nine",
+    "imdbId": "tt0708584"
+  },
+
+  {
+    "id": "S-11",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "You greatly respect the man for his tenacity and military service, but Lacaille and the League of Worlds are counting on you to clear the moon so the energy collection process can begin.",
+      "What do you do?"
+    ],
+    "commands": [
+      {
+        "key": "1",
+        "text": "Allow him to stay as he wishes and tell Lacaille to begin the energy tapping process.",
+        "transitions": [
+          {
+            "stateId": "S-11.10",
+            "chance": 1,
+            "dPoints": -1,
+            "uPoints": 1,
+            "pPoints": 1,
+            "ePoints": -1
+          }
+        ]
+      },
+      {
+        "key": "2",
+        "text": "Forcibly transport him off the moon to Lacaille for resettlement.",
+        "transitions": [
+          {
+            "stateId": "S-11.21",
+            "chance": 0.5,
+            "dPoints": 1,
+            "uPoints": 1,
+            "pPoints": 1,
+            "ePoints": -1
+          },
+          {
+            "stateId": "S-11.22",
+            "chance": 0.5,
+            "dPoints": 1,
+            "uPoints": 1,
+            "pPoints": 1,
+            "ePoints": 1
+          }
+        ]
+      },
+      {
+        "key": "3",
+        "text": "Instruct the Lacaillean government to hold off on starting the project until you can convince the last inhabitant to leave willingly.",
+        "transitions": [
+          {
+            "stateId": "S-11.30",
+            "chance": 0.5,
+            "dPoints": 1,
+            "uPoints": 0,
+            "pPoints": -1,
+            "ePoints": 1
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: Deep Space Nine",
+    "imdbId": "tt0708584"
+  },
+
+  {
+    "id": "S-11.10",
+    "role": "text",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "With tears in his eyes, Bok thanks you for letting him live life on his own terms.",
+      "You inform the government of Lacaille that you have finished your inspection of Erappa and they are clear to begin tapping the moon’s core.  The League congratulates you on a job well done and the people of Lacaille celebrate as the new bounty of energy provides much needed life necessities to those most in need.",
+      "You’re not sure long Bok survived, but the thought of him slowly suffocating alone deeply saddens you."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-00",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "S-11.21",
+    "role": "text",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "You request security personnel from the local government to help you remove Bok from Erappa for resettlement on Lacaille. In a furious rage, Bok stabs 2 of the security offers with a farm implement.  A third officer shoots Bok with a blaster pistol before he can do any more damage.  Bok dies instantly.",
+      "The League and government of Lacaille are satisfied with you handling of the matter, but you are saddened by the violent death of Bok."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-00",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "S-11.22",
+    "role": "text",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "You request security personnel from the local government to help you remove Bok from Erappa for resettlement on Lacaille. In a furious rage, Bok stabs 2 of the security offers with a farm implement.",
+      "The security officers eventually restrain Bok and drag him to the transport.  He screams curses at you the whole way there.",
+      "The League and government of Lacaille are satisfied with you handling of the matter.",
+      "Years later, after Bok becomes accustomed to his new life on Lacaille, he messages you and thanks you for saving his life."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-00",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "S-11.30",
+    "role": "text",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "You instruct the Lacaillean government to hold off on starting the energy tapping process because there are still people on Erappa.  For 2 weeks you plead with Bok to leave with you to resettle on Lacaille.",
+      "Twice, your command officer gives you a direct order to remove the last inhabitants from the planet so the project can begin.  You gently refuse continuing to plead with Bok to leave.  “As long as this farm still stands, I’m staying,” Bok says.",
+      "In a final act of desperation, you set fire to his house.  Bok is furious, but then, seeing how hard you are working to save him, agrees to leave with you.  You relocate Bok to Lacaille and instruct the government to start their efforts to tap the moon’s core."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-00",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ]
+  }
 ]
