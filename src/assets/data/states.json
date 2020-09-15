@@ -1,5 +1,31 @@
 [
   {
+    "id": "S-XX",
+    "role": "variable",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "What is your name"
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-00",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "variableName": "playerName"
+  },
+  {
     "id": "S-00",
     "role": "text",
     "bgColor": "#000000",

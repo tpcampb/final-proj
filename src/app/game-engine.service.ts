@@ -14,6 +14,7 @@ export class GameEngineService {
   private allStates: MdlState[];
   private curState: MdlState;
   private curStateSubject: Subject<MdlState>;
+  private variableMap;
 
   constructor() {
     this.curStateSubject = new Subject<MdlState>();
@@ -23,6 +24,11 @@ export class GameEngineService {
   public init() {
     this.allStates = this.readAllStates();
     this.curState = this.allStates[0];
+    this.variableMap = new Map();
+    this.variableMap.set('d', 0);
+    this.variableMap.set('u', 0);
+    this.variableMap.set('p', 0);
+    this.variableMap.set('e', 0);
   }
 
   public getCurState(): MdlState {
@@ -61,16 +67,23 @@ export class GameEngineService {
   }
 
   private executeVariableCommand(command: string): MdlState {
-    // if (this.curState.variableRx) {
-    //   console.log('Input does not match requirements');
-    //   const rxValid = new RegExp(this.curState.variableRx);
-    //   console.log(rxValid.test(command));
-    //   if (rxValid.test(command)) {
-    //     this.variableMap.set(this.curState.variableName, command);
-    //     return this.moveToStateById(this.curState.nextStateId);
-    //   }
-    // }
-    return this.curState;
+    // TODO::warn user if input does not match requirements
+    const state = this.curState;
+    let goodVar = true;
+    if (this.curState.variableRx) {
+      const rxValid = new RegExp(this.curState.variableRx);
+
+      if (!rxValid.test(command)) {
+        goodVar = false;
+      }
+    }
+
+    if (goodVar) {
+      this.setGameVar(state.variableName, command);
+      return this.executeTransition(this.getFirstStateTransition(state));
+    } else {
+      return this.curState;
+    }
   }
 
   private moveToStateById(id: string): MdlState {
@@ -84,7 +97,7 @@ export class GameEngineService {
     return this.curState;
   }
 
-  private nominateStateTransition(command: MdlCommand) {
+  private nominateStateTransition(command: MdlCommand): MdlTransition {
     const val = Math.random();
     console.log('rand value = ' + val);
     let totalChance = 0;
@@ -97,9 +110,38 @@ export class GameEngineService {
     return command.transitions[0];
   }
 
+  private getFirstStateTransition(state: MdlState) {
+    return state.commands[0].transitions[0];
+  }
+
   private executeTransition(transition: MdlTransition): MdlState {
-    // todo::added points
     // todo::process actions
+
+    this.variableMap.set('d', this.variableMap.get('d') + transition.dPoints);
+    this.addMetricPoints('d', transition.dPoints);
+    this.addMetricPoints('d', transition.uPoints);
+    this.addMetricPoints('d', transition.pPoints);
+    this.addMetricPoints('d', transition.ePoints);
+
     return this.moveToStateById(transition.stateId);
+  }
+
+  private addMetricPoints(type: string, amount: number) {
+    const curAmount = this.getGameVar(type);
+    this.setGameVar(type, curAmount + amount);
+  }
+
+  private setGameVar(key: string, value: any) {
+    this.variableMap.set(key, value);
+  }
+
+  private getGameVar(key: string): any {
+    return this.variableMap.get(key);
+  }
+
+  private listGameVars() {
+    for (const [key, value] of this.variableMap) {
+      console.log(key + ' = ' + value);
+    }
   }
 }

@@ -10,4 +10,7 @@ export class MdlState {
 
   imdbTitle: string;
   imdbId: string;
+
+  variableRx: string;
+  variableName: string;
 }
