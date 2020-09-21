@@ -13,4 +13,5 @@ export class MdlState {
 
   variableRx: string;
   variableName: string;
+  variableErrMsg: string;
 }

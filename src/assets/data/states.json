@@ -1,11 +1,11 @@
 [
   {
-    "id": "S-XX",
-    "role": "variable",
+    "id": "S-01",
+    "role": "command",
     "bgColor": "#000000",
     "fgColor": "white",
     "fgText": [
-      "What is your name"
+      "PRESS ENTER TO START"
     ],
     "commands": [
       {
@@ -14,7 +14,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-00",
+            "stateId": "S-02",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -22,16 +22,44 @@
           }
         ]
       }
-    ],
-    "variableName": "playerName"
+    ]
   },
+
   {
-    "id": "S-00",
-    "role": "text",
+    "id": "S-02",
+    "role": "command",
     "bgColor": "#000000",
     "fgColor": "white",
     "fgText": [
-      "Introduction"
+      "The United League of Worlds (ULW) is an alliance of planetary systems.  The individual systems are semi-autonomous entities under a central government.  The member worlds of the ULW agree to a basic set of principles.  They are bound together as equal partners for mutual defense, to share knowledge and resources, and to cooperate in scientific study and exploration.",
+      "You are a ULW commander aboard the intergalactic star ship Pegasus.  Your mission as you travel from system to system is to seek out and understand life as it exists in the universe.  When you interact with the worlds you meet, you are to assist where you can and represent the ULW proudly with the highest of ethical standards in hopes that these new worlds will respect the League and consider joining.",
+      "The path ahead is difficult but rewarding.  Good luck to you in your travels."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-03",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "S-03",
+    "role": "variable",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "What is your name"
     ],
     "commands": [
       {
@@ -48,7 +76,10 @@
           }
         ]
       }
-    ]
+    ],
+    "variableName": "PLAYER_NAME",
+    "variableRx": "^[^\\s]{1}.{0,9}$",
+    "variableErrMsg": "Must be between 1 and 10 characters"
   },
 
   {

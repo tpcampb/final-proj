@@ -24,11 +24,7 @@ export class GameEngineService {
   public init() {
     this.allStates = this.readAllStates();
     this.curState = this.allStates[0];
-    this.variableMap = new Map();
-    this.variableMap.set('d', 0);
-    this.variableMap.set('u', 0);
-    this.variableMap.set('p', 0);
-    this.variableMap.set('e', 0);
+    this.initMetrics();
   }
 
   public getCurState(): MdlState {
@@ -66,24 +62,28 @@ export class GameEngineService {
     return stateData;
   }
 
+  private initMetrics() {
+    this.variableMap = new Map();
+    this.variableMap.set('d', 0);
+    this.variableMap.set('u', 0);
+    this.variableMap.set('p', 0);
+    this.variableMap.set('e', 0);
+  }
+
   private executeVariableCommand(command: string): MdlState {
     // TODO::warn user if input does not match requirements
     const state = this.curState;
-    let goodVar = true;
-    if (this.curState.variableRx) {
-      const rxValid = new RegExp(this.curState.variableRx);
+    if (state.variableRx) {
+      const rxValid = new RegExp(state.variableRx);
 
       if (!rxValid.test(command)) {
-        goodVar = false;
+        console.log(state.variableErrMsg);
+        return state;
       }
     }
 
-    if (goodVar) {
-      this.setGameVar(state.variableName, command);
-      return this.executeTransition(this.getFirstStateTransition(state));
-    } else {
-      return this.curState;
-    }
+    this.setGameVar(state.variableName, command);
+    return this.executeTransition(this.getFirstStateTransition(state));
   }
 
   private moveToStateById(id: string): MdlState {
@@ -115,13 +115,10 @@ export class GameEngineService {
   }
 
   private executeTransition(transition: MdlTransition): MdlState {
-    // todo::process actions
-
-    this.variableMap.set('d', this.variableMap.get('d') + transition.dPoints);
     this.addMetricPoints('d', transition.dPoints);
-    this.addMetricPoints('d', transition.uPoints);
-    this.addMetricPoints('d', transition.pPoints);
-    this.addMetricPoints('d', transition.ePoints);
+    this.addMetricPoints('u', transition.uPoints);
+    this.addMetricPoints('p', transition.pPoints);
+    this.addMetricPoints('e', transition.ePoints);
 
     return this.moveToStateById(transition.stateId);
   }
