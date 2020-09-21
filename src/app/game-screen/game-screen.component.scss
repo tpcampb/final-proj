@@ -12,6 +12,9 @@
   @include game-pane;
 }
 
+.background-img {
+}
+
 .foreground-pane {
   @include game-pane;
   font-family: 'Press Start 2P', cursive;

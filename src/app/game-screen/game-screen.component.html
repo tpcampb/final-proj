@@ -1,5 +1,6 @@
 <div>
   <div class="background-pane" [style.background-color]="curState.bgColor">
+    <img *ngIf="curState.bgImage" class="background-img" [src]="curState.bgImage" alt="bgImage">
   </div>
 
   <div class="foreground-pane" *ngIf="curState.fgText" [style.color]="curState.fgColor">
@@ -16,6 +17,6 @@
 
   <div class="command-entry-pane">
     <label for="commandEntry"></label>
-    <input #commandElement id="commandEntry" type="text" class="command-entry" [(ngModel)]="curCommand" (keydown.enter)="processCommand()">
+    <input #commandElement id="commandEntry" type="text" class="command-entry" [(ngModel)]="curCommand" (keydown.enter)="processCommand()" [disabled]="isCommandEntryDisabled()" >
   </div>
 </div>

@@ -46,15 +46,6 @@ export class GameEngineService {
         return this.executeTransition(transition);
       }
     }
-
-    // if (nextState.delayedAction) {
-    //   setTimeout(() => {
-    //     console.log('fire delay');
-    //     this.moveToStateById(nextState.delayedAction.stateId);
-    //   }, nextState.delayedAction.delayMs);
-    // }
-
-    // todo::no valid command entered
     return this.curState;
   }
 
@@ -120,7 +111,15 @@ export class GameEngineService {
     this.addMetricPoints('p', transition.pPoints);
     this.addMetricPoints('e', transition.ePoints);
 
-    return this.moveToStateById(transition.stateId);
+    const nextState = this.moveToStateById(transition.stateId);
+
+    if (this.curState.role === 'cut scene') {
+      setTimeout(() => {
+        console.log('fire delay');
+        return this.executeTransition(this.getFirstStateTransition(nextState));
+      }, this.curState.cutSceneShowMs);
+    }
+    return nextState;
   }
 
   private addMetricPoints(type: string, amount: number) {

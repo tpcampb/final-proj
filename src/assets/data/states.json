@@ -68,7 +68,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-10",
+            "stateId": "S-04",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -80,6 +80,33 @@
     "variableName": "PLAYER_NAME",
     "variableRx": "^[^\\s]{1}.{0,9}$",
     "variableErrMsg": "Must be between 1 and 10 characters"
+  },
+
+  {
+    "id": "S-04",
+    "role": "cut scene",
+    "bgColor": "#000000",
+    "bgImage": "assets\\img\\Pegasus1.png",
+    "fgColor": "white",
+    "fgText": [
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-10",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "cutSceneShowMs": 2000
   },
 
   {

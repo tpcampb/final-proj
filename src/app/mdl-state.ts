@@ -4,6 +4,7 @@ export class MdlState {
   id: string;
   role: string;
   bgColor: string;
+  bgImage: string;
   fgColor: string;
   fgText: string[];
   commands: MdlCommand[];
@@ -14,4 +15,6 @@ export class MdlState {
   variableRx: string;
   variableName: string;
   variableErrMsg: string;
+
+  cutSceneShowMs: number;
 }

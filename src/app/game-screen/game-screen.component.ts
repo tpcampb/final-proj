@@ -40,6 +40,11 @@ export class GameScreenComponent implements OnInit, AfterViewInit {
     // audio.play();
   }
 
+  public isCommandEntryDisabled(): boolean {
+    console.log('role: ' + this.curState.role);
+    return this.curState.role === 'cut scene';
+  }
+
   private setCurState(state: MdlState) {
     if (state) {
       this.curState = state;
