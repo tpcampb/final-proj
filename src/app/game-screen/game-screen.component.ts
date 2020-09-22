@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild, AfterViewChecked} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {GameEngineService} from '../game-engine.service';
 import {MdlState} from '../mdl-state';
@@ -8,7 +8,7 @@ import {MdlState} from '../mdl-state';
   templateUrl: './game-screen.component.html',
   styleUrls: ['./game-screen.component.scss']
 })
-export class GameScreenComponent implements OnInit, AfterViewInit {
+export class GameScreenComponent implements OnInit, AfterViewInit, AfterViewChecked {
   @ViewChild('commandElement') commandElement: ElementRef;
 
   private curStateSubscription: Subscription;
@@ -29,6 +29,12 @@ export class GameScreenComponent implements OnInit, AfterViewInit {
     this.commandElement.nativeElement.focus();
   }
 
+  ngAfterViewChecked(){
+    if (!this.isCommandEntryDisabled()) {
+      this.commandElement.nativeElement.focus();
+    }
+  }
+
   public processCommand() {
     const command = this.curCommand;
     this.curCommand = '';
@@ -41,7 +47,6 @@ export class GameScreenComponent implements OnInit, AfterViewInit {
   }
 
   public isCommandEntryDisabled(): boolean {
-    console.log('role: ' + this.curState.role);
     return this.curState.role === 'cut scene';
   }
 

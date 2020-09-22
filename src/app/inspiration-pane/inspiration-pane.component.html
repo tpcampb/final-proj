@@ -4,11 +4,12 @@
   </div>
 
   <ng-container *ngIf="imdbInfo">
+
     <div class="row">
       <div class="col-12 content">
         <p>{{curState.imdbTitle}}</p>
         <p>Season {{imdbInfo.Season}}, Episode {{imdbInfo.Episode}}</p>
-        <p><a href="https://www.imdb.com/title/{{curState.imdbId}}" class="episode-link">{{imdbInfo.Title}}</a></p>
+        <p>"<a href="https://www.imdb.com/title/{{curState.imdbId}}" class="episode-link">{{imdbInfo.Title}}</a>"</p>
         <p>{{imdbInfo.Plot}}</p>
         <img [src]="imdbInfo.Poster" alt="">
         <br>

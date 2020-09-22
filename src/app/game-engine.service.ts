@@ -90,7 +90,6 @@ export class GameEngineService {
 
   private nominateStateTransition(command: MdlCommand): MdlTransition {
     const val = Math.random();
-    console.log('rand value = ' + val);
     let totalChance = 0;
     for (const t of command.transitions) {
       totalChance += t.chance;
@@ -115,7 +114,6 @@ export class GameEngineService {
 
     if (this.curState.role === 'cut scene') {
       setTimeout(() => {
-        console.log('fire delay');
         return this.executeTransition(this.getFirstStateTransition(nextState));
       }, this.curState.cutSceneShowMs);
     }

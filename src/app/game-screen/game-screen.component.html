@@ -19,4 +19,5 @@
     <label for="commandEntry"></label>
     <input #commandElement id="commandEntry" type="text" class="command-entry" [(ngModel)]="curCommand" (keydown.enter)="processCommand()" [disabled]="isCommandEntryDisabled()" >
   </div>
+
 </div>

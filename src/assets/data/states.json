@@ -221,7 +221,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-00",
+            "stateId": "S-20",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -248,7 +248,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-00",
+            "stateId": "S-20",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -277,7 +277,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-00",
+            "stateId": "S-20",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -305,7 +305,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-00",
+            "stateId": "S-20",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -314,5 +314,249 @@
         ]
       }
     ]
+  },
+
+
+  {
+    "id": "S-20",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "While surveying a nebula in the Korot system, the Pegasus collides with a small asteroid causing minor outer hull damage. A metal beam breaks off and falls on K’vosh, one of the senior officers inspecting the damaged area of the ship.  The accident leaves K’vosh paralyzed from the neck down.",
+      "K’vosh is the only Groor officer in the League.  The Groor are a warrior race that prize physical prowess, battle skill, and personal honor above all else.  The Groor are relatively new members of the League and the alliance is still somewhat tentative.  They fear the League does not respect them as much as the other member races."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-21",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708709"
+  },
+
+  {
+    "id": "S-21",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "The ship’s medical technology is impressive, but Dr. Joffo, the ships chief medical officer, fears the paralysis is permanent.  Dr. Joffo recommends cybernetic implants that, with practice, can give K’vosh about 70% of his normal mobility and allow him to live his life with minor assistance. The only other treatment option is to attempt a spinal graft.  The procedure could fully restore K’vosh’s mobility, but it is an experimental treatment never tried before and carries a significant risk of death.",
+      "Upon learning of his condition, K’vosh is horribly distraught.  In accordance with Groor societal expectations and traditions, K’vosh pleads with you, his commander and friend, to help him perform the Bhak’gra, a ceremonial suicide ritual. In Groor society, it is the proper and honorable action given the circumstance.  Never before has a human been asked to assist in the Bhak’gra; it is a testament to the respect and friendship you have built with K’vosh.  To refuse the request would be an insult to K’vosh and possibly the entire Groor empire."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-22",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708709"
+  },
+
+  {
+    "id": "S-22",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "K’vosh has asked you to help him perform the Bhak’gra but, out of an intense sense of duty, will follow whatever recommendation his commanding officer gives him.",
+      "What do you do?"
+    ],
+    "commands": [
+      {
+        "key": "1",
+        "text": "Help K’vosh perform the Bhak’gra as Groor tradition demands.",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-22.10",
+            "dPoints": 1,
+            "uPoints": 1,
+            "pPoints": -1,
+            "ePoints": -1
+          }
+        ]
+      },
+      {
+        "key": "2",
+        "text": "Refuse to help K’vosh end his life and recommend he get the medical implants.  It is safe and he can live a full life afterward.",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-22.20",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      },
+      {
+        "key": "3",
+        "text": "Recommend the experimental spinal graft.  It is risky, but you fear K’vosh will never accept his handicap and will find someone else to help him commit suicide.",
+        "transitions": [
+          {
+            "chance": 0.25,
+            "stateId": "S-22.31",
+            "dPoints": 1,
+            "uPoints": 1,
+            "pPoints": 1,
+            "ePoints": 1
+          },
+          {
+            "chance": 0.75,
+            "stateId": "S-22.32",
+            "dPoints": 1,
+            "uPoints": 1,
+            "pPoints": -0.5,
+            "ePoints": -0.5
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708709"
+  },
+
+  {
+    "id": "S-22.10",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "It is not an easy decision.  Even though it goes against your personal beliefs, you decide to help K’vosh perform the Bhak’gra because you want to honor your friend’s decision and you know how important Groor traditions are to him.  He would probably not forgive you if you refused to help and you suspect that he would never accept living with the implants.",
+      "As you prepare to plunge the cerimonal knife into K’vosh’s chest, he thanks as a brother for saving him form a life with dishonor.  The act saddens and horrifies you.  You doubt you will ever be the same man again.",
+      "The Groor hear about the situation and are greatly pleased that the League has shown such respect for their customs."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-01",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708709"
+  },
+
+  {
+    "id": "S-22.20",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "You believe life is sacred.  It is not right for K’vosh to commit suicide and it is absolutely wrong for you to help him do it.  It’s so senseless.  With the medical implants and proper rehabilitation, K’vosh can live a full and productive life.",
+      "When you tell K’vosh you will not help him with the Bhak’gra, you know from the look he gives you that he will never forgive you.  K’vosh request to be sent home where you suspect he will find someone else to help him end his life. The Groor are somewhat understanding of the differences between cultures, but are never the less disappointed by the way one of their fellow brethren was treated.",
+      "You’re confident you made the right decision.  However, it is a long time before you sleep peacefully at night."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-01",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708709"
+  },
+
+  {
+    "id": "S-22.31",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "You understand and respect Groor customs, but you just can’t bring yourself to participate in the Bhak’gra.  The only chance you have to save your friend is to recommend the experimental spinal graft.  It’s very risky and may result in death, but you know if you do nothing, K’vosh will just find someone else to help him end his life.",
+      "The procedure is long and difficult, but is ultimately successful.  K’vosh makes a full recovery.  The data collected during the procedure helps perfect the treatment and benefits many others.",
+      "Dr. Joffo is happy that K’vosh is fully recovered, but he does not agree with your decision to recommend such a risky procedure.  He notes this in his report to the League."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-01",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708709"
+  },
+
+  {
+    "id": "S-22.32",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "It’s very risky and may result in death, but you know if you do nothing, K’vosh will just find someone else to help him end his life.",
+      "Unfortunately, K’vosh does not survive the procedure. You return his body to the Groor home world and mourn the loss of a dear friend.",
+      "Although the first attempt did not succeed, the data collected during the procedure significantly advances research of spinal injuries leading to new treatment options that benefit many others."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-01",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708709"
   }
 ]
