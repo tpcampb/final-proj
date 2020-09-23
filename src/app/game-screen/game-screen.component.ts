@@ -30,6 +30,7 @@ export class GameScreenComponent implements OnInit, AfterViewInit, AfterViewChec
   }
 
   ngAfterViewChecked(){
+    console.log('ngAfterViewChecked');
     if (!this.isCommandEntryDisabled()) {
       this.commandElement.nativeElement.focus();
     }
