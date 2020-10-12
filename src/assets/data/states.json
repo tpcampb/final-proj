@@ -447,7 +447,7 @@
     "fgColor": "white",
     "fgText": [
       "It is not an easy decision.  Even though it goes against your personal beliefs, you decide to help K’vosh perform the Bhak’gra because you want to honor your friend’s decision and you know how important Groor traditions are to him.  He would probably not forgive you if you refused to help and you suspect that he would never accept living with the implants.",
-      "As you prepare to plunge the cerimonal knife into K’vosh’s chest, he thanks as a brother for saving him form a life with dishonor.  The act saddens and horrifies you.  You doubt you will ever be the same man again.",
+      "As you prepare to plunge the cerimonal knife into K’vosh’s chest, he thanks you as a brother for saving him form a life with dishonor.  The act saddens and horrifies you.  You doubt you will ever be the same man again.",
       "The Groor hear about the situation and are greatly pleased that the League has shown such respect for their customs."
     ],
     "commands": [
@@ -457,7 +457,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-01",
+            "stateId": "S-990",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -487,7 +487,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-01",
+            "stateId": "S-990",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -517,7 +517,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-01",
+            "stateId": "S-990",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -539,6 +539,38 @@
       "It’s very risky and may result in death, but you know if you do nothing, K’vosh will just find someone else to help him end his life.",
       "Unfortunately, K’vosh does not survive the procedure. You return his body to the Groor home world and mourn the loss of a dear friend.",
       "Although the first attempt did not succeed, the data collected during the procedure significantly advances research of spinal injuries leading to new treatment options that benefit many others."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-990",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708709"
+  },
+
+  {
+    "id": "S-990",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "{{PLAYER_NAME}},",
+      "   DEONTOLOGICAL ETHICS POINTS = {{d}}",
+      "     UTILITARIAN ETHICS POINTS = {{d}}",
+      "PROFESSIONAL REPUTATION POINTS = {{d}}",
+      "   EMOTIONAL WELL-BEING POINTS = {{e}}"
     ],
     "commands": [
       {

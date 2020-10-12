@@ -7,6 +7,7 @@ export class MdlState {
   bgImage: string;
   fgColor: string;
   fgText: string[];
+  fgTextFilled: string[];
   commands: MdlCommand[];
 
   imdbTitle: string;

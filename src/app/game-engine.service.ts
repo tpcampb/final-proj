@@ -22,9 +22,9 @@ export class GameEngineService {
   }
 
   public init() {
-    this.allStates = this.readAllStates();
-    this.curState = this.allStates[0];
     this.initMetrics();
+    this.allStates = this.readAllStates();
+    this.moveToState(this.allStates[0]);
   }
 
   public getCurState(): MdlState {
@@ -55,10 +55,10 @@ export class GameEngineService {
 
   private initMetrics() {
     this.variableMap = new Map();
-    this.variableMap.set('d', 0);
-    this.variableMap.set('u', 0);
-    this.variableMap.set('p', 0);
-    this.variableMap.set('e', 0);
+    this.variableMap.set('d', 5);
+    this.variableMap.set('u', 5);
+    this.variableMap.set('p', 5);
+    this.variableMap.set('e', 5);
   }
 
   private executeVariableCommand(command: string): MdlState {
@@ -83,6 +83,7 @@ export class GameEngineService {
   }
 
   private moveToState(nextState: MdlState): MdlState {
+    this.fillFgText(nextState);
     this.curState = nextState;
     this.curStateSubject.next(this.curState);
     return this.curState;
@@ -131,6 +132,53 @@ export class GameEngineService {
 
   private getGameVar(key: string): any {
     return this.variableMap.get(key);
+  }
+
+  private fillFgText(nextState: MdlState) {
+    if (!nextState) {
+      return;
+    }
+
+    let tempText = nextState.fgText;
+    if (tempText) {
+      tempText = tempText.map(line => {
+        return this.insertVarIntoLine(line);
+      });
+    }
+
+    nextState.fgTextFilled = tempText;
+    // var re = /\s*([^[:]+):\"([^"]+)"/g;
+    // var s = '[description:"aoeu" uuid:"123sth"]';
+    // var m;
+    //
+    // do {
+    //   m = re.exec(s);
+    //   if (m) {
+    //     console.log(m[1], m[2]);
+    //   }
+    // } while (m);
+  }
+
+  private insertVarIntoLine(line: string): string {
+    console.log('insertVarIntoLine');
+    let retVal = line;
+    let m = null;
+    const re = /{{(?<var>\w{1,15})}}/g;
+    do {
+      m = re.exec(line);
+      if (m) {
+        console.log(m);
+        console.log(m.groups.var);
+        const v = m.groups.var;
+        if (this.variableMap.has(v)) {
+          retVal = retVal.replace('{{' + v + '}}', this.variableMap.get(v));
+        }
+
+        retVal = retVal;
+      }
+    } while (m);
+
+    return retVal;
   }
 
   private listGameVars() {

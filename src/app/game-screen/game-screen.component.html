@@ -3,8 +3,8 @@
     <img *ngIf="curState.bgImage" class="background-img" [src]="curState.bgImage" alt="bgImage">
   </div>
 
-  <div class="foreground-pane" *ngIf="curState.fgText" [style.color]="curState.fgColor">
-    <p class="foreground-p" *ngFor="let text of curState.fgText">{{text}}</p>
+  <div class="foreground-pane" *ngIf="curState.fgTextFilled" [style.color]="curState.fgColor">
+    <p class="foreground-p" *ngFor="let text of curState.fgTextFilled">{{text}}</p>
   </div>
 
   <div class="command-pane" *ngIf="curState.commands">
