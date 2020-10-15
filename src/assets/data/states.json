@@ -24,7 +24,6 @@
       }
     ]
   },
-
   {
     "id": "S-02",
     "role": "command",
@@ -52,7 +51,6 @@
       }
     ]
   },
-
   {
     "id": "S-03",
     "role": "variable",
@@ -81,7 +79,6 @@
     "variableRx": "^[^\\s]{1}.{0,9}$",
     "variableErrMsg": "Must be between 1 and 10 characters"
   },
-
   {
     "id": "S-04",
     "role": "cut scene",
@@ -97,7 +94,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-10",
+            "stateId": "END-STATE",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -108,6 +105,7 @@
     ],
     "cutSceneShowMs": 2000
   },
+
 
   {
     "id": "S-10",
@@ -138,7 +136,6 @@
     "imdbTitle": "Star Trek: Deep Space Nine",
     "imdbId": "tt0708584"
   },
-
   {
     "id": "S-11",
     "role": "command",
@@ -203,7 +200,6 @@
     "imdbTitle": "Star Trek: Deep Space Nine",
     "imdbId": "tt0708584"
   },
-
   {
     "id": "S-11.10",
     "role": "text",
@@ -221,7 +217,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-20",
+            "stateId": "END-STATE",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -231,7 +227,6 @@
       }
     ]
   },
-
   {
     "id": "S-11.21",
     "role": "text",
@@ -248,7 +243,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-20",
+            "stateId": "END-STATE",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -258,7 +253,6 @@
       }
     ]
   },
-
   {
     "id": "S-11.22",
     "role": "text",
@@ -277,7 +271,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-20",
+            "stateId": "END-STATE",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -287,7 +281,6 @@
       }
     ]
   },
-
   {
     "id": "S-11.30",
     "role": "text",
@@ -305,7 +298,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-20",
+            "stateId": "END-STATE",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -345,7 +338,6 @@
     "imdbTitle": "Star Trek: The Next Generation",
     "imdbId": "tt0708709"
   },
-
   {
     "id": "S-21",
     "role": "command",
@@ -374,7 +366,6 @@
     "imdbTitle": "Star Trek: The Next Generation",
     "imdbId": "tt0708709"
   },
-
   {
     "id": "S-22",
     "role": "command",
@@ -439,7 +430,6 @@
     "imdbTitle": "Star Trek: The Next Generation",
     "imdbId": "tt0708709"
   },
-
   {
     "id": "S-22.10",
     "role": "command",
@@ -457,7 +447,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-990",
+            "stateId": "END-STATE",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -469,7 +459,6 @@
     "imdbTitle": "Star Trek: The Next Generation",
     "imdbId": "tt0708709"
   },
-
   {
     "id": "S-22.20",
     "role": "command",
@@ -487,7 +476,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-990",
+            "stateId": "END-STATE",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -499,7 +488,6 @@
     "imdbTitle": "Star Trek: The Next Generation",
     "imdbId": "tt0708709"
   },
-
   {
     "id": "S-22.31",
     "role": "command",
@@ -517,7 +505,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-990",
+            "stateId": "END-STATE",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -529,7 +517,6 @@
     "imdbTitle": "Star Trek: The Next Generation",
     "imdbId": "tt0708709"
   },
-
   {
     "id": "S-22.32",
     "role": "command",
@@ -547,7 +534,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-990",
+            "stateId": "END-STATE",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -558,6 +545,287 @@
     ],
     "imdbTitle": "Star Trek: The Next Generation",
     "imdbId": "tt0708709"
+  },
+
+
+  {
+    "id": "S-30",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "While charting a remote and unexplored area of space, the Pegasus receives a strange transmission. You decide to follow that transmission and encounter a ship that appears to be in distress. The ship is of an unknown design and origin. Scans reveal a single lifeform with fading vital signs.",
+      "You instruct the crew to transport the alien lifeform directly to the medical bay surrounded by a quarantine field. After inspection, Dr. Jaffo tells you that the alien is unlike anything ever recorded in ULW medical databases. He is unsure if there is anything he can do to help.",
+      "As you are discussing the matter with the doctor, the alien’s ship explodes. There are no casualties on the Pegasus, but the ship has been heavily damaged. Structural integrity has been compromised and the fusion reactor is destabilizing. If repairs are not made soon, life support could fail and everyone on board will be lost. The nearest ULW ship is 3 months away at maximum speed. You may not have that much time."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-31",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: Voyager",
+    "imdbId": "tt0708939"
+  },
+  {
+    "id": "S-31",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "Mia Taylor, the ship’s chief engineer, comes to the medical bay to discuss repair priorities with you. Suddenly, the strange, insect-like alien leaps off the medical bed, somehow crosses the quarantine field, and attaches itself to Lieutenant Taylor. She is alive, but the doctor doesn’t think he can remove the parasitic alien from Lt. Taylor without killing both.",
+      "Dr. Jaffo finds research documents in the ship’s database that helps him develop a procedure that will separate the alien and may save Lt. Taylor’s life. The research he used was conducted by an astrobiologist named Dr. Naris. Dr. Naris was brilliant, but notorious for brutal and horrific experiments on living subjects.",
+      "Lt. Taylor learns that the monstrous Dr. Naris’s research was the basis for the procedure Dr. Jaffo intends to use on her. She adamantly refuses the treatment stating that to use the research would be to validate his methods and possibly encourage others to do so. She would rather die than let that happen."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-32",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: Voyager",
+    "imdbId": "tt0708939"
+  },
+  {
+    "id": "S-32",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "The doctor comes to you and ask for advice.  You are torn between Lt. Taylor’s right to refuse treatment and your fear that if the chief engineer dies, your team may not be able to keep the ship’s life support systems from failing.",
+      "What do you do?"
+    ],
+    "commands": [
+      {
+        "key": "1",
+        "text": "Tell the doctor to perform the procedure using Dr. Naris’s research.  Although you respect Lt. Taylor’s wishes, you are responsible for every life on the ship and losing your chief engineer is not a risk you can take at a time like this. You worry that your relationship with Lt. Taylor may not be the same after this.",
+        "transitions": [
+          {
+            "stateId": "S-32.10",
+            "chance": 1,
+            "dPoints": -0.5,
+            "uPoints": 0.5,
+            "pPoints": 0,
+            "ePoints": 0.25
+          }
+        ]
+      },
+      {
+        "key": "2",
+        "text": "It’s not a decision you agree with, but Lt. Taylor’s has a right to choose what is done to her own body. You’ll just have to do what you can with the remaining engineering staff.",
+        "transitions": [
+          {
+            "stateId": "S-32.20",
+            "chance": 1,
+            "dPoints": 0.5,
+            "uPoints": -0.5,
+            "pPoints": 0,
+            "ePoints": -0.25
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: Voyager",
+    "imdbId": "tt0708939"
+  },
+  {
+    "id": "S-32.10",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "You instruct the doctor to start the separation procedure. Part of the procedure involves electro-static pulses to the alien’s nervous system to temporarily paralyze it. While performing the procedure, the alien’s vital signs start fluctuating wildly. Dr Jaffo says if he continues the procedure, the alien will die.  If he doesn’t finish the procedure, Lt. Taylor will die.  The doctor says that he can reduce the voltage of the pulses.  This will reduce the stress on the alien, but will take longer and may not be enough to fully detach the alien.  Additionally, Lt. Taylor’s vital signs are dropping fast. She may die before you finish the separation.",
+      "What do you do?"
+    ],
+    "commands": [
+      {
+        "key": "1",
+        "text": "Tell the doctor to continue the treatment.",
+        "transitions": [
+          {
+            "stateId": "S-32.10.10",
+            "chance": 1,
+            "dPoints": -0.5,
+            "uPoints": 0.5,
+            "pPoints": -0.25,
+            "ePoints": 0
+          }
+        ]
+      },
+      {
+        "key": "2",
+        "text": "Tell the doctor to continue with a lower voltage.",
+        "transitions": [
+          {
+            "stateId": "S-32.10.20",
+            "chance": 0.75,
+            "dPoints": 0.5,
+            "uPoints": -0.5,
+            "pPoints": 0.5,
+            "ePoints": 0.25
+          },
+          {
+            "stateId": "S-32.10.21",
+            "chance": 0.25,
+            "dPoints": 0.5,
+            "uPoints": -0.5,
+            "pPoints": 0.5,
+            "ePoints": 0.25
+          }
+        ]
+      },
+      {
+        "key": "3",
+        "text": "You’ve changed your mind.  Tell the doctor to abort to procedure and honor Lt. Taylor’s wishes to refuse treatment.",
+        "transitions": [
+          {
+            "stateId": "S-32.20",
+            "chance": 1,
+            "dPoints": -1,
+            "uPoints": -0.5,
+            "pPoints": 0,
+            "ePoints": -0.5
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: Voyager",
+    "imdbId": "tt0708939"
+  },
+  {
+    "id": "S-32.10.10",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "Dr. Jaffo successfully separates the alien from Lt. Taylor.  Lt. Taylor is weak, but is able supervise repair of the ship without further incident.",
+      "As the doctor fears, the alien dies. It was a difficult situation and you’re confident in your decision, but the ULW isn’t thrilled with your report. Subsequent contact with a species is much harder when first contact results in death."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "END-STATE",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": -0.25,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: Voyager",
+    "imdbId": "tt0708939"
+  },
+  {
+    "id": "S-32.10.20",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "Both Lt. Taylor and the alien survive.  Lt. Taylor is weak, but is able supervise repair of the ship without further incident.",
+      "You follow the alien ship’s engine signature back to its planet and return it home.  The alien race is unique and your crew has not yet been able to decipher their language, but you can tell the aliens are appreciative of your efforts.",
+      "The ULW is excited about first contact with a new species.  They are appreciative of your efforts to keep the alien alive."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "END-STATE",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0.25,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: Voyager",
+    "imdbId": "tt0708939"
+  },
+  {
+    "id": "S-32.10.21",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "Both Lt. Taylor and the alien survive.  However, Lt. Taylor is severely weakened by the procedure and is unable to supervise repair of the ship.",
+      "The following day, a power relay in engineering erupts killing several crewmembers.  The remaining engineering staff is able to stabilize ships power and life support, but the ship has lost propulsion.  You have to wait 3 months for another ship to arrive with additional equipment to finish repairs.",
+      "The ULW is excited to have first contact with a new and unique race.  They are appreciative of your efforts to keep the alien alive."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "END-STATE",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": -0.25,
+            "ePoints": -0.25
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: Voyager",
+    "imdbId": "tt0708939"
+  },
+  {
+    "id": "S-32.20",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "Lt. Taylor thanks you for respecting her wishes. Her vital signs continue to weaken over the next week until she finally passes.",
+      "The remaining engineering crew is able to stabilize the ship and restore minimal propulsion. ",
+      "You follow the alien ship’s engine signature back to its planet and return it home.  The alien is so weak, you are unsure if it will survive and you are unsure how the alien’s people view the situation."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "END-STATE",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: Voyager",
+    "imdbId": "tt0708939"
   },
 
   {
@@ -587,8 +855,6 @@
           }
         ]
       }
-    ],
-    "imdbTitle": "Star Trek: The Next Generation",
-    "imdbId": "tt0708709"
+    ]
   }
 ]

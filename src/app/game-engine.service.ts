@@ -14,7 +14,9 @@ export class GameEngineService {
   private allStates: MdlState[];
   private curState: MdlState;
   private curStateSubject: Subject<MdlState>;
-  private variableMap;
+  private variableMap: Map<string, number>;
+  private scenarios: string[];
+  private scenarioInd: number;
 
   constructor() {
     this.curStateSubject = new Subject<MdlState>();
@@ -23,8 +25,16 @@ export class GameEngineService {
 
   public init() {
     this.initMetrics();
+    this.scenarios = [
+      // 'S-01',
+      // 'S-10',
+      // 'S-10',
+      // 'S-20',
+      'S-30'
+    ];
+    this.scenarioInd = -1;
     this.allStates = this.readAllStates();
-    this.moveToState(this.allStates[0]);
+    this.moveToStateById(this.nextScenarioStateId());
   }
 
   public getCurState(): MdlState {
@@ -54,7 +64,7 @@ export class GameEngineService {
   }
 
   private initMetrics() {
-    this.variableMap = new Map();
+    this.variableMap = new Map<string, number>();
     this.variableMap.set('d', 5);
     this.variableMap.set('u', 5);
     this.variableMap.set('p', 5);
@@ -75,6 +85,28 @@ export class GameEngineService {
 
     this.setGameVar(state.variableName, command);
     return this.executeTransition(this.getFirstStateTransition(state));
+  }
+
+  private executeTransition(transition: MdlTransition): MdlState {
+    this.addMetricPoints('d', transition.dPoints);
+    this.addMetricPoints('u', transition.uPoints);
+    this.addMetricPoints('p', transition.pPoints);
+    this.addMetricPoints('e', transition.ePoints);
+
+    let nextStateId = transition.stateId;
+    if (transition.stateId === 'END-STATE') {
+      nextStateId = this.nextScenarioStateId();
+    }
+    const nextState = this.moveToStateById(nextStateId);
+
+    if (this.curState.role === 'cut scene') {
+      setTimeout(() => {
+        return this.executeTransition(this.getFirstStateTransition(nextState));
+      }, this.curState.cutSceneShowMs);
+    }
+
+
+    return nextState;
   }
 
   private moveToStateById(id: string): MdlState {
@@ -103,22 +135,6 @@ export class GameEngineService {
 
   private getFirstStateTransition(state: MdlState) {
     return state.commands[0].transitions[0];
-  }
-
-  private executeTransition(transition: MdlTransition): MdlState {
-    this.addMetricPoints('d', transition.dPoints);
-    this.addMetricPoints('u', transition.uPoints);
-    this.addMetricPoints('p', transition.pPoints);
-    this.addMetricPoints('e', transition.ePoints);
-
-    const nextState = this.moveToStateById(transition.stateId);
-
-    if (this.curState.role === 'cut scene') {
-      setTimeout(() => {
-        return this.executeTransition(this.getFirstStateTransition(nextState));
-      }, this.curState.cutSceneShowMs);
-    }
-    return nextState;
   }
 
   private addMetricPoints(type: string, amount: number) {
@@ -171,7 +187,7 @@ export class GameEngineService {
         console.log(m.groups.var);
         const v = m.groups.var;
         if (this.variableMap.has(v)) {
-          retVal = retVal.replace('{{' + v + '}}', this.variableMap.get(v));
+          retVal = retVal.replace('{{' + v + '}}', this.variableMap.get(v).toString());
         }
 
         retVal = retVal;
@@ -179,6 +195,16 @@ export class GameEngineService {
     } while (m);
 
     return retVal;
+  }
+
+  private nextScenarioStateId() {
+    this.scenarioInd += 1;
+
+    if (this.scenarioInd >= this.scenarios.length) {
+      return 'S-990';
+    } else {
+      return this.scenarios[this.scenarioInd];
+    }
   }
 
   private listGameVars() {
