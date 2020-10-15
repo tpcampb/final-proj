@@ -21,20 +21,19 @@ export class GameEngineService {
   constructor() {
     this.curStateSubject = new Subject<MdlState>();
     this.init();
+    this.moveToStateById(this.nextScenarioStateId());
   }
 
   public init() {
     this.initMetrics();
+    this.allStates = this.readAllStates();
     this.scenarios = [
-      // 'S-01',
-      // 'S-10',
-      // 'S-10',
-      // 'S-20',
+      'S-01',
+      'S-10',
+      'S-20',
       'S-30'
     ];
     this.scenarioInd = -1;
-    this.allStates = this.readAllStates();
-    this.moveToStateById(this.nextScenarioStateId());
   }
 
   public getCurState(): MdlState {
@@ -95,6 +94,10 @@ export class GameEngineService {
 
     let nextStateId = transition.stateId;
     if (transition.stateId === 'END-STATE') {
+      nextStateId = this.nextScenarioStateId();
+    }
+    if (transition.stateId === 'END-GAME') {
+      this.init();
       nextStateId = this.nextScenarioStateId();
     }
     const nextState = this.moveToStateById(nextStateId);

@@ -225,7 +225,9 @@
           }
         ]
       }
-    ]
+    ],
+    "imdbTitle": "Star Trek: Deep Space Nine",
+    "imdbId": "tt0708584"
   },
   {
     "id": "S-11.21",
@@ -251,7 +253,9 @@
           }
         ]
       }
-    ]
+    ],
+    "imdbTitle": "Star Trek: Deep Space Nine",
+    "imdbId": "tt0708584"
   },
   {
     "id": "S-11.22",
@@ -279,7 +283,9 @@
           }
         ]
       }
-    ]
+    ],
+    "imdbTitle": "Star Trek: Deep Space Nine",
+    "imdbId": "tt0708584"
   },
   {
     "id": "S-11.30",
@@ -306,7 +312,9 @@
           }
         ]
       }
-    ]
+    ],
+    "imdbTitle": "Star Trek: Deep Space Nine",
+    "imdbId": "tt0708584"
   },
 
 
@@ -847,7 +855,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "S-01",
+            "stateId": "END-GAME",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,

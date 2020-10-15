@@ -16,7 +16,7 @@ export class GameScreenComponent implements OnInit, AfterViewInit, AfterViewChec
   public curCommand = '';
 
   constructor(private gameEngine: GameEngineService) {
-    this.curState = this.gameEngine.getCurState();
+    this.setCurState(this.gameEngine.getCurState())
     this.curStateSubscription = this.gameEngine.getCurStateObservable().subscribe(state => {
       this.setCurState(state);
     });
@@ -34,6 +34,10 @@ export class GameScreenComponent implements OnInit, AfterViewInit, AfterViewChec
     if (!this.isCommandEntryDisabled()) {
       this.commandElement.nativeElement.focus();
     }
+  }
+
+  shouldShowCommands(): boolean {
+    return this.curState && this.curState.role === 'command';
   }
 
   public processCommand() {
@@ -56,4 +60,6 @@ export class GameScreenComponent implements OnInit, AfterViewInit, AfterViewChec
       this.curState = state;
     }
   }
+
+
 }
