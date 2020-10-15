@@ -182,7 +182,8 @@ export class GameEngineService {
     console.log('insertVarIntoLine');
     let retVal = line;
     let m = null;
-    const re = /{{(?<var>\w{1,15})}}/g;
+    // const re = /{{(?<var>\w{1,15})}}/g;
+    const re = new RegExp('{{(?<var>\\w{1,15})}}', 'g');
     do {
       m = re.exec(line);
       if (m) {
