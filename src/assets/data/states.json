@@ -217,7 +217,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "END-STATE",
+            "stateId": "S-10-END",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -245,7 +245,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "END-STATE",
+            "stateId": "S-10-END",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -275,7 +275,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "END-STATE",
+            "stateId": "S-10-END",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -304,7 +304,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "END-STATE",
+            "stateId": "S-10-END",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -315,6 +315,32 @@
     ],
     "imdbTitle": "Star Trek: Deep Space Nine",
     "imdbId": "tt0708584"
+  },
+  {
+    "id": "S-10-END",
+    "role": "cut scene",
+    "bgColor": "#000000",
+    "bgImage": "assets\\img\\Pegasus1.png",
+    "fgColor": "white",
+    "fgText": [
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "END-STATE",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "cutSceneShowMs": 2000
   },
 
 
@@ -455,7 +481,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "END-STATE",
+            "stateId": "S-20-END",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -484,7 +510,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "END-STATE",
+            "stateId": "S-20-END",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -513,7 +539,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "END-STATE",
+            "stateId": "S-20-END",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -542,7 +568,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "END-STATE",
+            "stateId": "S-20-END",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -553,6 +579,32 @@
     ],
     "imdbTitle": "Star Trek: The Next Generation",
     "imdbId": "tt0708709"
+  },
+  {
+    "id": "S-20-END",
+    "role": "cut scene",
+    "bgColor": "#000000",
+    "bgImage": "assets\\img\\Pegasus1.png",
+    "fgColor": "white",
+    "fgText": [
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "END-STATE",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "cutSceneShowMs": 2000
   },
 
 
@@ -736,7 +788,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "END-STATE",
+            "stateId": "S-30-END",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": -0.25,
@@ -765,7 +817,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "END-STATE",
+            "stateId": "S-30-END",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0.25,
@@ -794,7 +846,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "END-STATE",
+            "stateId": "S-30-END",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": -0.25,
@@ -823,7 +875,7 @@
         "transitions": [
           {
             "chance": 1,
-            "stateId": "END-STATE",
+            "stateId": "S-30-END",
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
@@ -835,7 +887,281 @@
     "imdbTitle": "Star Trek: Voyager",
     "imdbId": "tt0708939"
   },
+  {
+    "id": "S-30-END",
+    "role": "cut scene",
+    "bgColor": "#000000",
+    "bgImage": "assets\\img\\Pegasus1.png",
+    "fgColor": "white",
+    "fgText": [
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "END-STATE",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "cutSceneShowMs": 2000
+  },
 
+  {
+    "id": "S-40",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "The Pegasus is asked to investigate the source of a signal detected from the Toi sector on long range scan.  On the way there, the science team analyze the signal and determine it is an antiquated earth distress beacon.",
+      "Upon arriving in the Toi sector, the Pegasus is hailed from a nearby habitable planet.  The caller explains that his name is Trinn Gliese, the health minister for the inhabitants of the planet.  According to him, the planet was settled by an earth colonist ship Skyclave around 400 years ago.  Minister Gliese is eager to re-establish contact with the League and asks that you beam down to the planet to meet.",
+      "You gather an away team and head to the planet.  There, the minister explains that the Skyclave crash landed on this planet 400 years ago.  Of the 800 original passengers, only 11 survived.  This was not enough to sustain the colony, so they turned exclusively to cloning to survive.  All of the colonies inhabitants are clones of the original 11 survivors."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-41",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708838"
+  },
+  {
+    "id": "S-41",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "However, each successive generation of clones introduced imperfections in the DNA.  The fiercely insular colony issued the distress call because due to the genetic deterioration, they will be unable to produce new clones in about 50 years.  They ask the Pegasus to help them repair equipment and to donate fresh DNA so they can clone new citizens.",
+      "What do you do?"
+    ],
+    "commands": [
+      {
+        "key": "1",
+        "text": "You explain the situation to your crew and tell them that, although they are not required or expected to, can can donate their DNA to the Skyclave colony.",
+        "transitions": [
+          {
+            "stateId": "S-41.10",
+            "chance": 1,
+            "dPoints": 0,
+            "uPoints": 1,
+            "pPoints": 0.5,
+            "ePoints": -0.5
+          }
+        ]
+      },
+      {
+        "key": "2",
+        "text": "You know your crew values their uniqueness and don’t think it would be morally acceptable to make this request of them. You solemnly refuse Skyclave’s request, but offer to relocate them to another human colony where they can intermingle with the locals and carry on in a new way.",
+        "transitions": [
+          {
+            "stateId": "S-41.20",
+            "chance": 1,
+            "dPoints": 1,
+            "uPoints": -0.5,
+            "pPoints": -0.5,
+            "ePoints": 0.5
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708838"
+  },
+  {
+    "id": "S-41.10",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "As expected, there were not enough volunteers from your crew to solve the colonist problem.  You deliver the unfortunate news to Minister Gliese.",
+      "As your crew is finishing up repairs, a Skyclave doctor tells you that some of your crew fainted while working and were taken to a nearby medical facility to recuperate.  You have a bad feeling about his and ask Dr. Joffo to thoroughly examine the affected crew members.  The crew members show signs that some of their interstitial undifferentiated cells has been extracted without their knowledge.  You request a Pegasus security team to inspect the cloning labs and, in the process, confirm that the Skyclave colonist are using stolen DNA from your crew to grow a new batch of colonist clones."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-41.11",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708838"
+  },
+  {
+    "id": "S-41.11",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "What do you do?"
+    ],
+    "commands": [
+      {
+        "key": "1",
+        "text": "It was wrong of the Skyclave colonist to steal the genetic material, but now that the cloning process has started, stopping it would be akin to destroying a new life.  Let them keep the DNA.",
+        "transitions": [
+          {
+            "stateId": "S-41.11.10",
+            "chance": 1,
+            "dPoints": -1,
+            "uPoints": 0.5,
+            "pPoints": 0.5,
+            "ePoints": -0.5
+          }
+        ]
+      },
+      {
+        "key": "2",
+        "text": "You are outraged.  You liken what the Skyclave colonist have done to rape.  Order your security personnel to confiscate and destroy all stolen genetic material including the newly incubating clones.",
+        "transitions": [
+          {
+            "stateId": "S-41.11.20",
+            "chance": 1,
+            "dPoints": 1,
+            "uPoints": -0.5,
+            "pPoints": -0.5,
+            "ePoints": 0.5
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708838"
+  },
+  {
+    "id": "S-41.11.10",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "You’re not sure if it was the right decision to let the Skyclave colonist keep the DNA stolen from your crew.  Everyone, including you, feel violated by the experience.  It was a unique culture and, despite their aggression, you are somewhat relieved that their society will live on.  You issue a report cautioning all league members to be careful if they encounter the Skyclave colony in the future. The ULW leadership is intrigued by the advancements in genetics the colonist displayed."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-40-END",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708838"
+  },
+  {
+    "id": "S-41.11.20",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "You know you made the right decision and your whole crew appreciates how you dealt with the situation.  However, you and ULW are disappointed that a unique civilization may end.  You resolve to continue looking for answers."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-40-END",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708838"
+  },
+  {
+    "id": "S-41.20",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "The skyclave colonist are vehemently opposed to relocating. Dejected, they ask that you finish up the repairs on their lab equipment and leave.",
+      "As your crew is finishing up repairs, a Skyclave doctor tells you that some of your crew fainted while working and were taken to a nearby medical facility to recuperate.  You have a bad feeling about his and ask Dr. Joffo to thoroughly examine the affected crew members.  The crew members show signs that some of their interstitial undifferentiated cells has been extracted without their knowledge.  You request a Pegasus security team to inspect the cloning labs and, in the process, confirm that the Skyclave colonist are using stolen DNA from your crew to grow a new batch of colonist clones."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-41.11",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708838"
+  },
+  {
+    "id": "S-40-END",
+    "role": "cut scene",
+    "bgColor": "#000000",
+    "bgImage": "assets\\img\\Pegasus1.png",
+    "fgColor": "white",
+    "fgText": [
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "END-STATE",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "cutSceneShowMs": 2000
+  },
   {
     "id": "S-990",
     "role": "command",

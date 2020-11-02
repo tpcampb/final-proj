@@ -31,7 +31,8 @@ export class GameEngineService {
       'S-01',
       'S-10',
       'S-20',
-      'S-30'
+      'S-30',
+      'S-40'
     ];
     this.scenarioInd = -1;
   }
