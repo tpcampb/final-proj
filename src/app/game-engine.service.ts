@@ -32,7 +32,8 @@ export class GameEngineService {
       'S-10',
       'S-20',
       'S-30',
-      'S-40'
+      'S-40',
+      'S-50'
     ];
     this.scenarioInd = -1;
   }
@@ -101,14 +102,19 @@ export class GameEngineService {
       this.init();
       nextStateId = this.nextScenarioStateId();
     }
+
     const nextState = this.moveToStateById(nextStateId);
+    const nextStateTransition = this.getFirstStateTransition(nextState);
+
+    if (nextStateTransition.sound) {
+      this.playAudio(nextStateTransition.sound);
+    }
 
     if (this.curState.role === 'cut scene') {
       setTimeout(() => {
-        return this.executeTransition(this.getFirstStateTransition(nextState));
+        return this.executeTransition(nextStateTransition);
       }, this.curState.cutSceneShowMs);
     }
-
 
     return nextState;
   }
@@ -180,7 +186,6 @@ export class GameEngineService {
   }
 
   private insertVarIntoLine(line: string): string {
-    console.log('insertVarIntoLine');
     let retVal = line;
     let m = null;
     // const re = /{{(?<var>\w{1,15})}}/g;
@@ -216,5 +221,12 @@ export class GameEngineService {
     for (const [key, value] of this.variableMap) {
       console.log(key + ' = ' + value);
     }
+  }
+
+  private playAudio(sound: string) {
+    const audio = new Audio();
+    audio.src = sound;
+    audio.load();
+    audio.play();
   }
 }

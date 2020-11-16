@@ -6,4 +6,5 @@ export class MdlTransition {
   pPoints: number;
   ePoints: number;
   actionId: string;
+  sound: string;
 }

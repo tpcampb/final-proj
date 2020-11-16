@@ -98,7 +98,8 @@
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
-            "ePoints": 0
+            "ePoints": 0,
+            "sound": "assets\\sound\\space-swoosh-brighter.wav"
           }
         ]
       }
@@ -335,7 +336,8 @@
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
-            "ePoints": 0
+            "ePoints": 0,
+            "sound": "assets\\sound\\space-swoosh-brighter.wav"
           }
         ]
       }
@@ -599,7 +601,8 @@
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
-            "ePoints": 0
+            "ePoints": 0,
+            "sound": "assets\\sound\\space-swoosh-brighter.wav"
           }
         ]
       }
@@ -906,7 +909,8 @@
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
-            "ePoints": 0
+            "ePoints": 0,
+            "sound": "assets\\sound\\space-swoosh-brighter.wav"
           }
         ]
       }
@@ -1155,13 +1159,275 @@
             "dPoints": 0,
             "uPoints": 0,
             "pPoints": 0,
-            "ePoints": 0
+            "ePoints": 0,
+            "sound": "assets\\sound\\space-swoosh-brighter.wav"
           }
         ]
       }
     ],
     "cutSceneShowMs": 2000
   },
+
+  {
+    "id": "S-50",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "While docked at a repair facility for routine maintenance, you receive word that Commander Lee Robinson, a scientist with ULWs cybernetics division, has requested a meeting with you.  He arrives with orders from the ULW requesting that you transfer Lt. Commander Grax from your ship to his command for an experiment.",
+      "Lt. Grax is the most unique member of your crew.  He is an android build by Dr. Mindow, a legendary genius in robotics, and the only inorganic being that has ever served in the ULW.  Dr. Mindow has not been seen or heard from in 50 years, left no information on his work, and Grax is his only surviving creation.",
+      "Grax appears human.  He is extremely intelligent, possesses physical capabilities far superior to humans, is mindful of his duties aboard the Pegasus, acts with care toward others, but does not feel emotion in the sense that humans do.  He is an exemplary officer and an indispensable member of the crew.  You’ve grown quite fond of him since you met him."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-51",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708807"
+  },
+  {
+    "id": "S-51",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "Commander Lee explains that he wants to upload Grax’s memory into storage, shut him down, and disassemble him for study to learn how to create more androids like Grax.  You discuss the matter with Grax.  Upon review of Robinson’s research, Grax concludes that although the concept is intriguing, the procedure Command Robinson is planning is risky and may result in Grax’s demise.  Although Grax doesn’t not possess emotion, he is motivated by a sense of self-preservation.  Grax is adamantly refuses to procedure.",
+      "Undoubtedly thinking of the benefits of having someone like Grax aboard ever ship in the fleet, ULW command issues orders compelling Lt. Grax to comply with Commander Robinson’s request for study."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-52",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708807"
+  },
+  {
+    "id": "S-52",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "What do you do?"
+    ],
+    "commands": [
+      {
+        "key": "1",
+        "text": "Advise Grax to resign his ULW commission. It is the only legal way to avoid the ULW order to participate in Commander Robinson’s experiment.",
+        "transitions": [
+          {
+            "stateId": "S-52.10",
+            "chance": 0,
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      },
+      {
+        "key": "2",
+        "text": "Advise Grax to comply with the ULW order.",
+        "transitions": [
+          {
+            "stateId": "S-52.10",
+            "chance": 0,
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708807"
+  },
+  {
+    "id": "S-52.10",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "Grax decides to resign his ULW commission to avoid participating in Robinson’s procedure.  Command Robinson is furious.  He maintains that Grax is not a sentient being and is, in essence, the property of the League.  He does not have the right to resign.  The ULW agrees and again issues orders for Grax to transfer from the Pegasus.",
+      "What do you do?"
+    ],
+    "commands": [
+      {
+        "key": "1",
+        "text": "Accept the ruling and sign the order transferring Grax to Commander Robinson’s command.",
+        "transitions": [
+          {
+            "stateId": "S-52.10.10",
+            "chance": 0,
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      },
+      {
+        "key": "2",
+        "text": "Demand a formal hearing on the matter.",
+        "transitions": [
+          {
+            "stateId": "S-52.10.20",
+            "chance": 0.6,
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          },
+          {
+            "stateId": "S-52.10.21",
+            "chance": 0.4,
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708807"
+  },
+  {
+    "id": "S-52.10.10",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "You reluctantly sign the order transferring Grax to Robinson’s command.  You inform Grax of his transfer and offer your regrets.  Two hours later, you learn that Grax transported off of the ship and fled on one of ULWs shuttles.  He is now a fugitive.",
+      "You are deeply saddened at the loss of a good officer and a respected friend.  You wonder if there was more you could have done."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-50-END",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708807"
+  },
+  {
+    "id": "S-52.10.20",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "The Judge Advocate General sides with you.  Lt. Grax is to be considered a sentient being and has the right to refuse Robinson’s procedure.  Grax tells Commander Robinson that his work is intriguing and to continue the research.  If it advances to the point where it is safe, Grax will help.",
+      "The ULW rescinds the transfer order and you are relieved that Grax will be allowed to continue to serve aboard the Pegasus."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-50-END",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708807"
+  },
+  {
+    "id": "S-52.10.21",
+    "role": "command",
+    "bgColor": "#000000",
+    "fgColor": "white",
+    "fgText": [
+      "The Judge Advocate General sides with Commander Robinson. Grax is just a machine however complex and is the property of the ULW.  He will be transferred and compelled to participate in Commander Robinson’s experiment.",
+      "A year later you learn that Commander Robinson’s experiment is largely a failure.  He was unable to replicate Dr. Mindow’s work.  Furthermore, although he was able to reassemble Grax and upload all stored memory, Grax was never quite the same and his altered personality was not compatible with the duties of a ULW officer.  He was discharged from his duties and continued to live the Commander Robinson’s lab."
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "S-50-END",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0
+          }
+        ]
+      }
+    ],
+    "imdbTitle": "Star Trek: The Next Generation",
+    "imdbId": "tt0708807"
+  },
+  {
+    "id": "S-50-END",
+    "role": "cut scene",
+    "bgColor": "#000000",
+    "bgImage": "assets\\img\\Pegasus1.png",
+    "fgColor": "white",
+    "fgText": [
+    ],
+    "commands": [
+      {
+        "key": "*",
+        "text": "Next",
+        "transitions": [
+          {
+            "chance": 1,
+            "stateId": "END-STATE",
+            "dPoints": 0,
+            "uPoints": 0,
+            "pPoints": 0,
+            "ePoints": 0,
+            "sound": "assets\\sound\\space-swoosh-brighter.wav"
+          }
+        ]
+      }
+    ],
+    "cutSceneShowMs": 2000
+  },
+
   {
     "id": "S-990",
     "role": "command",

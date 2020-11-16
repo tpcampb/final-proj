@@ -40,8 +40,6 @@ export class InspirationPaneComponent implements OnInit {
       console.log(url);
       this.http.get<ImdbInfo>(url)
         .subscribe((data) => {
-          console.log('received data');
-          console.log(data);
           this.imdbInfo = data;
         });
     }
